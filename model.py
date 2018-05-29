@@ -317,7 +317,7 @@ class SequenceLabelingModel(object):
         config.gpu_options.allow_growth = True
 
         #self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-        tf.device('/cpu:0')
+        os.environ["CUDA_VISIBLE_DEVICES"]="-1"
         self.sess = tf.Session(config=config)
 
         # init all variable
