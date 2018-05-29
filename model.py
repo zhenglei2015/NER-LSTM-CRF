@@ -313,7 +313,11 @@ class SequenceLabelingModel(object):
 
         # TODO sess, visible_device_list待修改
         gpu_options = tf.GPUOptions(visible_device_list='0', allow_growth=True)
-        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+        config = tf.ConfigProto()
+        config.gpu_options.allow_growth = True
+
+        #self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+        self.sess = tf.Session(config=config)
 
         # init all variable
         init = tf.global_variables_initializer()
