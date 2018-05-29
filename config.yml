@@ -11,7 +11,7 @@ data_params:
 model: NER
 model_params:
   batch_size: 64
-  bilstm_params: {num_layers: 1, num_units: 256, rnn_dropout: 0.2}
+  bilstm_params: {num_layers: 1, num_units: 128, rnn_dropout: 0.2}
   clip: 10
   dev_size: 0.1
   dropout_rate: 0.5
@@ -25,7 +25,7 @@ model_params:
       dropout_rate: 0.3
       path: ./Res/embed/char_embed.pkl
       path_pre_train: ./data/embedding.txt
-      shape: [8818, 64]
+      shape: [88, 64]
     f2:
       dropout_rate: 0.3
       path: null
