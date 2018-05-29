@@ -1,7 +1,7 @@
 data_params:
   path_result: ./data/test.ner.txt.result
-  path_test: ./data/test.ner.txt
-  path_train: ./data/train.ner.txt
+  path_test: ./data/dev.eval
+  path_train: ./data/train.eval
   sep: table
   voc_params:
     char: {min_count: 0, path: ./Res/voc/char.voc.pkl}
