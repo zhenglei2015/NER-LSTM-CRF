@@ -202,3 +202,28 @@ def load_embed_from_txt(path):
         embedding[item] = vec
         line = file_r.readline()
     return embedding, vec_dim
+
+def get_two_files():
+    fi = open("data/train.eval", "r")
+    out_source = open("data/source.eval", "w")
+    out_target = open("data/target.eval", "w")
+    source = ""
+    target = ""
+    for line in fi:
+        #"most O"
+        if len(line.split(" ")) < 2:
+            out_source.write(source + "\n")
+            out_target.write(target.replace("\r", "")+ "\n")
+            source = ""
+            target = ""
+            continue
+        s = line.replace("\n", "").split(" ")
+        source += s[0] + " "
+        target += s[1] + " "
+    fi.close()
+    out_source.close()
+    out_target.close()
+
+if __name__ == "__main__":
+    get_two_files()
+
